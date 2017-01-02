@@ -1,0 +1,21 @@
+galaxy_info:
+  author: David Pujadas
+  description: Ansible role to install Certbot on Ubuntu server.
+
+  license: MIT
+
+  min_ansible_version: 2.1
+
+  platforms:
+  - name: Ubuntu
+    versions:
+      - precise
+      - trusty
+      - wily
+      - xenial
+
+  galaxy_tags:
+    - ubuntu
+    - certbot
+
+dependencies: []

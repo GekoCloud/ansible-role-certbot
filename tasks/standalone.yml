@@ -1,0 +1,5 @@
+- name: Request certificate
+  shell: >
+    {{ certbot_certonly_command }} --standalone{% for domain in item.domains %} -d {{ domain }}{% endfor %}
+  tags:
+    - certbot

@@ -1,0 +1,14 @@
+---
+- hosts: travis
+  connection: docker
+  remote_user: root
+  vars:
+    certbot_certs:
+      - auth_plugin: 'standalone'
+        domains:
+          - 'www.example.com'
+  roles:
+    - {
+      role: ansible-role-certbot,
+      certbot_use_staging: True
+    }

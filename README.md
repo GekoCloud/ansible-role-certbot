@@ -1,2 +1,29 @@
-# ansible-role-certbot
-Ansible role to install Certbot on Ubuntu server
+certbot
+=======
+
+This role installs and configures [Certbot](https://certbot.eff.org/).
+
+Role Variables
+--------------
+
+- `certbot_path`: Path to install certbot script (default: '/opt')
+- `certbot_certs`: List of certificates to generate (default: Empty list)
+- `certbot_auto_renew`: Set auto-renewal cronjob or not (default: True)
+- `certbot_renew_hook`: Command to be executed when any certificate is renewed (Ex: 'service apache2 reload')
+- `certbot_use_staging`: Use letsencrypt test server or not (default: False)
+
+Example Playbook
+----------------
+
+    - hosts: servers
+      roles:
+        - {
+          role: certbot
+        }
+
+License
+-------
+
+MIT
+
+[![Build Status](https://travis-ci.org/dpujadas/ansible-role-certbot.svg?branch=master)](https://travis-ci.org/dpujadas/ansible-role-certbot)

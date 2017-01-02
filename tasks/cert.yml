@@ -1,0 +1,9 @@
+- name: Check if certificate already exists
+  stat:
+    path: '/etc/letsencrypt/live/{{ item.domains[0] }}'
+  register: certbot_cert_exist
+  tags:
+    - certbot
+
+- include: '{{ item.auth_plugin }}.yml'
+  when: not certbot_cert_exist.stat.exists

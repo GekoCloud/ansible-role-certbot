@@ -1,0 +1,5 @@
+---
+# vars file for certbot
+
+certbot_script: '{{ certbot_path }}/certbot-auto'
+certbot_certonly_command: '{{ certbot_script }} certonly -q --agree-tos -m {{ certbot_email }}{% if certbot_use_staging %} --staging{% endif %}'

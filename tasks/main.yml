@@ -1,0 +1,22 @@
+---
+# tasks file for certbot
+
+- name: Install certbot
+  get_url:
+    url: 'https://dl.eff.org/certbot-auto'
+    dest: '{{ certbot_script }}'
+    mode: 'a+x'
+  tags:
+    - certbot
+
+- include: 'cert.yml'
+  with_items: '{{ certbot_certs }}'
+
+- name: Set auto-renewal cronjob
+  cron:
+    name: "Renew letsencrypt certs"
+    special_time: 'weekly'
+    job: '{{ certbot_script }} renew --quiet --no-self-upgrade{% if certbot_renew_hook is defined %} --renew-hook "{{ certbot_renew_hook }}"{% endif %}'
+  when: certbot_auto_renew
+  tags:
+    - certbot
