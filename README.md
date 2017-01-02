@@ -11,6 +11,7 @@ Role Variables
 - `certbot_auto_renew`: Set auto-renewal cronjob or not (default: True)
 - `certbot_renew_hook`: Command to be executed when any certificate is renewed (Ex: 'service apache2 reload')
 - `certbot_use_staging`: Use letsencrypt test server or not (default: False)
+- `certbot_email`: Email used for registration and recovery contact (Ex: 'test@example.com')
 
 Example Playbook
 ----------------

@@ -10,5 +10,6 @@
   roles:
     - {
       role: ansible-role-certbot,
-      certbot_use_staging: True
+      certbot_use_staging: True,
+      certbot_email: 'test@example.com'
     }
