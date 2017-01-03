@@ -17,9 +17,17 @@ Example Playbook
 ----------------
 
     - hosts: servers
+      vars:
+        certbot_certs:
+          - auth_plugin: 'webroot'
+            webroot_path: '/var/www/html'
+            domains:
+              - example.com
+              - www.example.com
       roles:
         - {
-          role: certbot
+          role: certbot,
+          certbot_email: 'test@example.com'
         }
 
 License
