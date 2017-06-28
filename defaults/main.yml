@@ -6,6 +6,7 @@ certbot_auto_renew: True
 certbot_use_staging: False
 certbot_certs: []
 # Format for certbot certs:
-#   - auth_plugin  : Authentication plugin (currently only standalone or webroot)
-#     webroot_path : If webroot authentication is used, path to webserver document root
-#     domains      : List of valid domains for this certificate
+#   - auth_plugin          : Authentication plugin (currently only standalone or webroot)
+#     webroot_path         : If webroot authentication is used, path to webserver document root
+#     preferred_challenges : If standalone authentication is used, optionally set the preferred-challenges to use (http or tls-sni)
+#     domains              : List of valid domains for this certificate
