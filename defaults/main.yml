@@ -3,6 +3,7 @@
 
 certbot_path: '/opt'
 certbot_auto_renew: True
+certbot_self_upgrade: True
 certbot_use_staging: False
 certbot_certs: []
 # Format for certbot certs:
