@@ -1,5 +1,5 @@
 - name: Request certificate
   shell: >
-    {{ certbot_certonly_command }}{% if item.preferred_challenges is defined $} --preferred-challenges {{ item.preferred_challenges }}{% endif %} --standalone{% for domain in item.domains %} -d {{ domain }}{% endfor %}
+    {{ certbot_certonly_command }}{% if item.preferred_challenges is defined %} --preferred-challenges {{ item.preferred_challenges }}{% endif %} --standalone{% for domain in item.domains %} -d {{ domain }}{% endfor %}
   tags:
     - certbot
